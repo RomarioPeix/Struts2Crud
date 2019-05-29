@@ -5,19 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Seja Bem Vindo!</title>
-</head>
-<style>
-a {margin: 0; padding: 0;}
-body {display: flex; background-color: lightygray; padding: 0; margin: 0; overflow: hidden;}
-div {width: 50vw; height: 100vh; padding: 0; margin: 0;-webkit-transition: transform .25s ease-in-out;}
-div:hover {cursor: pointer;transform: scale(1.5);font-size: 1.5em;text-shadow: 3px 2px gray;}
-h1 {text-align: center; margin-top: 50vh; color: white;}
-#controle {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/controle.jpg'); background-size: cover;background-repeat: no-repeat; }
-#agendar {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/agendar.jpg');background-size: cover; background-repeat: no-repeat;}
-
-</style>
+	<meta charset="UTF-8">
+	<title>Seja Bem Vindo!</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
+	</head>
 <body>
 	<div id="agendar" onclick="agendar()">
 		<h1>AGENDAR EXAMES</h1>
@@ -28,11 +19,11 @@ h1 {text-align: center; margin-top: 50vh; color: white;}
 </body>
 <script>
 	function agendar() {
-		window.location.href = "#1";
+		window.location.href = "agendar";
 	}
 	
 	function controle() {
-		window.location.href = "#2";
+		window.location.href = "controle";
 	}
 </script>
 </html>

@@ -4,10 +4,27 @@
  	"http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
-	<package name="test" extends="struts-default">
-		<action name="indexAction" class="IndexAction">
+	<package name="crud" extends="struts-default">
+		<action name="" class="IndexAction">
 			<result name="index">/index.jsp</result>
-			<result name="error">/error.jsp</result>
 		</action>
+		<action name="agendar" class="AgendaAction">
+			<result name="success">/agendar.jsp</result>
+		</action>
+		<action name="controle" class="ControleAction">
+			<result name="success">/controle.jsp</result>
+		</action>
+		<action name="funcionario" class="ControleAction">
+			<result name="success">/funcionario.jsp</result>
+		</action>
+		<action name="exame" class="ExameAction">
+			<result name="success">/exame.jsp</result>
+		</action>
+		<action name="tipo" class="TipoAction">
+			<result name="success">/tipo.jsp</result>
+		</action>
+		<action name="prestador" class="PrestadorAction">
+			<result name="success">/prestador.jsp</result>
+		</action>		
 	</package>
 </struts>

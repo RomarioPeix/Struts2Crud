@@ -1,0 +1,73 @@
+a {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: block;
+	background-color: lightygray;
+}
+	
+
+h1 {
+	text-align: center;
+	margin-top: 50vh;
+	color: white;
+}
+
+#controle {
+	background-image: url('../img/controle.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#agendar {
+	background-image: url('../img/agendar.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}	
+
+
+
+@media (min-width: 768px) {
+	
+	body {
+		display: flex;
+		background-color: lightygray;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+	}
+		
+	
+	div {
+		width: 50vw;
+		height: 100vh;
+		padding: 0;
+		margin: 0;
+	}
+		
+	
+	div:hover {
+		cursor: pointer;
+		transform: scale(1.5);
+		font-size: 1.15em;
+		text-shadow: 3px 2px gray;
+		-webkit-transition: transform .15s ease-in-out;
+	}
+		
+	
+	#controle {
+		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+			url('../img/controle.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	
+	#agendar {
+		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+			url('../img/agendar.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}	
+}
