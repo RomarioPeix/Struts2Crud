@@ -9,7 +9,7 @@
 <title>Funcionário</title>
 </head>
 <body>
-<h1>Cadastrar Novo Funcionário</h1>
+<h1>Cadastrar Novo Funcionário </h1>
 <s:form action="registerAction">
 	<s:textfield name="nome" label="Nome"></s:textfield>
 	<s:textfield name="sobrenome" label="Sobrenome"></s:textfield>
