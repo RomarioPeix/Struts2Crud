@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Seja Bem Vindo!</title>
+	<title>BEM VINDO!</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
 	</head>
 <body>

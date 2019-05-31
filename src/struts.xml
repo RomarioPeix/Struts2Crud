@@ -34,6 +34,12 @@
 		</action>
 		<action name="registerExameAction" class="Register.RegisterExameAction">
 			<result name="success">/pos_register.jsp</result>
-		</action>		
+		</action>
+		<action name="registerPrestadorAction" class="Register.RegisterPrestadorAction">
+			<result name="success">/pos_register.jsp</result>
+		</action>
+		<action name="registerAgendaAction" class="Register.RegisterExameAction">
+			<result name="success">/pos_register.jsp</result>
+		</action>	
 	</package>
 </struts>

@@ -6,25 +6,4 @@ public class ControleAction implements Action{
 	{
 		return SUCCESS;
 	}
-	
-	public String funcionario() 
-	{
-		return "funcionario";
-	}
-	
-	public String exame() 
-	{
-		return "exame";
-	}
-	
-	public String tipo() 
-	{
-		return "tipo";
-	}
-	
-	public String prestador() 
-	{
-		return "prestador";
-	}
-	
 }

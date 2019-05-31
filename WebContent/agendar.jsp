@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Agendar Exame</title>
+<link rel="stylesheet" type="text/css" href="assets/css/form.css">
 </head>
 <body>
 <h1>Futura Pagina de Agendamento</h1>
