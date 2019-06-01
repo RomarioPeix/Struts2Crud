@@ -1,7 +1,8 @@
 package Register;
 import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class RegisterTipoAction implements Action{
+public class RegisterTipoAction extends ActionSupport implements Action{
 
 	String nome;
 	public String execute() throws Exception {

@@ -47,7 +47,7 @@ input[type=date], select {
   box-sizing: border-box;
 }
 
-input[type=submit], .btn {
+input[type=submit], input[type=reset], .btn {
   width: 100%;
   text-decoration: none;
   background-color: #4CAF50;
@@ -57,6 +57,10 @@ input[type=submit], .btn {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+input[type=reset] {
+  background-color: #ff2b2b;
 }
 
 input[type=submit]:hover, .btn {

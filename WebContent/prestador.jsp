@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="assets/css/form.css">
 <title>PRESTADOR</title>
+<s:head/>
 </head>
 <style>
 body {
@@ -20,6 +21,7 @@ body {
 	<h1>CADASTRAR PRESTADOR </h1>
 	<s:form action="registerPrestadorAction" class="form-init">
 		<s:textfield type="text" name="nome" label="Nome"></s:textfield>
+		<s:reset value="LIMPAR"></s:reset>
 		<s:submit value="Cadastrar"></s:submit>
 	</s:form> <br>
 	<a href="controle" class="btn btn-primary"> VOLTAR</a>

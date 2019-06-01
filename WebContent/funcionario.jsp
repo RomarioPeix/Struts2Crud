@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="assets/css/form.css">
 <title>FUNCIONÁRIO</title>
+<s:head/>
 </head>
 <style>
 body {
@@ -26,6 +27,7 @@ body {
 		<s:select name="sexo" list="{'Masculino', 'Feminino'}" label="Sexo"></s:select>
 		<s:textfield name="dataNascimento" type="date" format="dd-MM-yyyy" label="Data de Nascimento"></s:textfield>	
 		<s:textfield name="email" label="Email"></s:textfield>
+		<s:reset value="LIMPAR"></s:reset>
 		<s:submit value="CADASTRAR"></s:submit>
 	</s:form> <br>
 	<a href="controle" class="btn btn-primary"> VOLTAR</a>

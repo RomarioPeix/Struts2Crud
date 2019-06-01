@@ -28,15 +28,19 @@
 		</action>
 		<action name="registerAction" class="Register.RegisterFuncionarioAction">
 			<result name="success">/pos_register.jsp</result>
+			<result name="input">/funcionario.jsp</result>		
 		</action>
 		<action name="registerTipoAction" class="Register.RegisterTipoAction">
 			<result name="success">/pos_register.jsp</result>
+			<result name="input">/tipo.jsp</result>
 		</action>
 		<action name="registerExameAction" class="Register.RegisterExameAction">
 			<result name="success">/pos_register.jsp</result>
+			<result name="input">/exame.jsp</result>
 		</action>
 		<action name="registerPrestadorAction" class="Register.RegisterPrestadorAction">
 			<result name="success">/pos_register.jsp</result>
+			<result name="input">/prestador.jsp</result>
 		</action>
 		<action name="registerAgendaAction" class="Register.RegisterExameAction">
 			<result name="success">/pos_register.jsp</result>

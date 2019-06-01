@@ -1,7 +1,8 @@
 package Register;
 import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class RegisterFuncionarioAction implements Action {
+public class RegisterFuncionarioAction extends ActionSupport implements Action {
 
 	String nome;
 	String sobrenome;
@@ -70,6 +71,4 @@ public class RegisterFuncionarioAction implements Action {
 	public void setEmail(String email) {
 		this.email = email;
 	}	
-	
-	
 }

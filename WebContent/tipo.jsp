@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="assets/css/form.css">
 <title>TIPOS DE EXAME</title>
+<s:head/>
 </head>
 <style>
 body {
@@ -20,6 +21,7 @@ body {
 	<h1>CADASTRAR TIPO DE EXAME</h1>
 	<s:form action="registerTipoAction" class="form-init">
 		<s:textfield name="nome" type="text" label="Nome"></s:textfield>
+		<s:reset value="LIMPAR"></s:reset>	
 		<s:submit value="Cadastrar"></s:submit>
 	</s:form>
 	<br>

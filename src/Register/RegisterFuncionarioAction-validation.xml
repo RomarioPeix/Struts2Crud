@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+	<validator type="requiredstring">
+		<param name="fieldName">nome</param>
+		<message>O NOME é obrigatório!</message>
+	</validator>
+	
+	<validator type="requiredstring">
+		<param name="fieldName">sobrenome</param>
+		<message>O SOBRENOME é obrigatório!</message>
+	</validator>
+	
+	<validator type="requiredstring">
+		<param name="fieldName">cargo</param>
+		<message>O CARGO é obrigatório!</message>
+	</validator>
+	
+	<validator type="requiredstring">
+		<param name="fieldName">setor</param>
+		<message>O SETOR é obrigatório!</message>
+	</validator>
+	
+	<validator type="requiredstring">
+		<param name="fieldName">setor</param>
+		<message>O SETOR é obrigatório!</message>
+	</validator>
+	
+	<validator type="requiredstring">
+		<param name="fieldName">sexo</param>
+		<message>O SEXO é obrigatório!</message>
+	</validator>
+	
+	<validator type="requiredstring">
+		<param name="fieldName">dataNascimento</param>
+		<message>A DATA DE NASCIMENTO é obrigatória!</message>
+	</validator>
+	
+	<field name="email">
+		<field-validator type="requiredstring">
+			<message>O EMAIL é obrigatório!</message>
+		</field-validator>
+				<field-validator type="email">
+			<message>Insira um EMAIL válido!</message>
+		</field-validator>
+		
+	</field>
+	
+
+</validators>
