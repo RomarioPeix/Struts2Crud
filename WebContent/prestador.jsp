@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="assets/css/form.css">
-<title>PRESTADOR</title>
+<link rel="stylesheet" type="text/css" href="assets/css/table.css"> 
+<title>PRESTADORES</title>
 <s:head/>
 </head>
 <style>
@@ -18,14 +19,41 @@ body {
 </style>
 <body>
 <div class="form-container">
-	<h1>CADASTRAR PRESTADOR </h1>
-	<s:form action="registerPrestadorAction" class="form-init">
-		<s:textfield type="text" name="nome" label="Nome"></s:textfield>
-		<s:reset value="LIMPAR"></s:reset>
-		<s:submit value="Cadastrar"></s:submit>
-	</s:form> <br>
-	<a href="controle" class="btn btn-primary"> VOLTAR</a>
+	<a href="cadastrar-prestador" class="btn btn-primary">CADASTRAR PRESTADOR </a>
+	<br><br><hr><br>
+	<table>
+		<thead>
+			<tr>
+				 <th>Nome</th>
+				 <th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<s:iterator value="prestadores" var="prestador">		
+				<tr style="margin-top:10px !important;">
+					<td><s:property value="#prestador.nome"/></td>
+					<td>
+						<a class="remove-prestador" title="remover" data-id='<s:property value="#prestador.id"/>'> <img width="16" height="16" src="assets/img/trash.png"> </a>
+						<a href="editar-prestador?id=<s:property value="#prestador.id"/>" title="editar"> <img width="16" height="16" src="assets/img/edit.png"> </a>
+					</td>
+				</tr>
+			</s:iterator>
+		</tbody>
+	</table><br> <br>
+	<a href=controle class="btn btn-primary"> VOLTAR</a>
 	<br>
 </div>
 </body>
+<script src="assets/js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$(document).on('click', '.remove-prestador', function() {
+			var id = $(this).data('id');
+			$.post('remover-prestador', {cd_prestador: id}, function() {
+				window.location.reload(true);
+			});
+		});
+	});
+
+</script>
 </html>

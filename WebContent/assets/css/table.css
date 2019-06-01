@@ -1,0 +1,6 @@
+@charset "UTF-8";
+body {background-image: url('assets/img/rh.jpg');background-size: cover;background-repeat: no-repeat;}
+.btn-primary {font-size: 18px;}
+table {border-collapse: collapse;width: 100%;}
+th, td {text-align: left;padding: 8px;}
+tr:nth-child(even) {background-color: #007bbb; color: white;}

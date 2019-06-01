@@ -9,7 +9,7 @@
 		</field-validator>
 	</field>
 	<field name="tipo">
-		<field-validator type="requiredstring">
+		<field-validator type="int">
 			<message>O tipo de exame é OBRIGATÓRIO.</message>
 		</field-validator>
 	</field>

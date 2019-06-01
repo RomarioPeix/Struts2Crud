@@ -1,53 +1,27 @@
-package Register;
-import java.util.ArrayList;
-import java.util.List;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+package classes;
 
-import com.opensymphony.xwork2.Action;
-import com.opensymphony.xwork2.ActionSupport;
-import Model.FuncionarioModel;
-import classes.Funcionario;
-
-public class RegisterFuncionarioAction extends ActionSupport implements Action {
-
+public class Funcionario {
+	Integer id;
 	String nome;
 	String sobrenome;
 	String cargo;
 	String setor;
 	String sexo;
-	Integer sexoInt;
 	String dataNascimento;
 	String email;
-	Integer id;
-	List<Funcionario> funcionarios;
-
 	
-	public String execute() throws Exception {
-		java.awt.List funcionario = new java.awt.List();
-		funcionario.add(nome);
-		funcionario.add(sobrenome);
-		funcionario.add(cargo);
-		funcionario.add(setor);
-		funcionario.add(sexo);
-		funcionario.add(dataNascimento);
-		funcionario.add(email);
-		
-		try {
-			funcionario.add(id.toString());			
-		} catch (NullPointerException e) {
-			funcionario.add("0");
-		}
-		
-		FuncionarioModel.registerFuncionario(funcionario);
-		
-		return SUCCESS;
+	public Funcionario(Integer id, String nome, String sobrenome, String cargo, String setor, String sexo, String dataNascimento, String email) {
+		super();
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.cargo = cargo;
+		this.setor = setor;
+		this.sexo = sexo;
+		this.dataNascimento = dataNascimento;
+		this.email = email;
+		this.id = id;
 	}
 	
-	public void setSexoInt(Integer sexoInt) {
-		this.sexoInt = sexoInt;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -102,8 +76,8 @@ public class RegisterFuncionarioAction extends ActionSupport implements Action {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}	
-	
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -111,4 +85,6 @@ public class RegisterFuncionarioAction extends ActionSupport implements Action {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	
 }

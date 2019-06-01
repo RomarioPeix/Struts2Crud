@@ -1,16 +1,14 @@
-package Register;
-import java.util.ArrayList;
-import java.util.List;
+package Update;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
+
 import Model.FuncionarioModel;
-import classes.Funcionario;
 
-public class RegisterFuncionarioAction extends ActionSupport implements Action {
-
+public class UpdateFuncionarioAction extends ActionSupport {
+	
 	String nome;
 	String sobrenome;
 	String cargo;
@@ -20,32 +18,26 @@ public class RegisterFuncionarioAction extends ActionSupport implements Action {
 	String dataNascimento;
 	String email;
 	Integer id;
-	List<Funcionario> funcionarios;
 
-	
-	public String execute() throws Exception {
-		java.awt.List funcionario = new java.awt.List();
-		funcionario.add(nome);
-		funcionario.add(sobrenome);
-		funcionario.add(cargo);
-		funcionario.add(setor);
-		funcionario.add(sexo);
-		funcionario.add(dataNascimento);
-		funcionario.add(email);
-		
+	public String execute() {
+		ResultSet rs = FuncionarioModel.getFuncionario(id);
 		try {
-			funcionario.add(id.toString());			
-		} catch (NullPointerException e) {
-			funcionario.add("0");
+			while(rs.next()) {
+				id = rs.getInt("cd_funcionario");
+				nome = rs.getString("nm_funcionario");
+				sobrenome = rs.getString("nm_funcionario_sobrenome");
+				cargo = rs.getString("nm_funcionario_cargo");
+				setor = rs.getString("nm_funcionario_setor");
+				sexo = rs.getString("nm_funcionario_sexo");
+				dataNascimento = rs.getString("dt_funcionario_nascimento");
+				email = rs.getString("nm_funcionario_email");
+			}
+			return SUCCESS;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return ERROR;
 		}
-		
-		FuncionarioModel.registerFuncionario(funcionario);
-		
-		return SUCCESS;
-	}
-	
-	public void setSexoInt(Integer sexoInt) {
-		this.sexoInt = sexoInt;
 	}
 
 	public String getNome() {
@@ -88,6 +80,14 @@ public class RegisterFuncionarioAction extends ActionSupport implements Action {
 		this.sexo = sexo;
 	}
 
+	public Integer getSexoInt() {
+		return sexoInt;
+	}
+
+	public void setSexoInt(Integer sexoInt) {
+		this.sexoInt = sexoInt;
+	}
+
 	public String getDataNascimento() {
 		return dataNascimento;
 	}
@@ -102,8 +102,8 @@ public class RegisterFuncionarioAction extends ActionSupport implements Action {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}	
-	
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -111,4 +111,5 @@ public class RegisterFuncionarioAction extends ActionSupport implements Action {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
 }

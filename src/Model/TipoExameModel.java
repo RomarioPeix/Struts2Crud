@@ -1,24 +1,25 @@
 package Model;
 
 import java.awt.List;
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import Database.Database;
-
-public class TipoExameModel {
-
-	private static Connection connection = Database.getConexaoMySQL();
-	
+public class TipoExameModel extends AppModel {	
 	public static boolean registerTipoExame(List data) {
 		Statement con;
 		try {
 			con = connection.createStatement();
-			String fields = "nm_tipo_exame";
-			String values = "'" + data.getItem(0) + "'"; 
-			con.execute("INSERT INTO tipo_exame(" + fields + ") VALUES ("  + values + ")");
+			if(data.getItem(1) == "0") {
+				String fields = "nm_tipo_exame";
+				String values = "'" + data.getItem(0) + "'"; 
+				con.execute("INSERT INTO tipo_exame(" + fields + ") VALUES ("  + values + ")");
+			} else {
+				String fields = "nm_tipo_exame = '" + data.getItem(0) + "'";
+				String sql = "UPDATE tipo_exame SET " + fields + " WHERE cd_tipo_exame = " + data.getItem(1);
+				System.out.println(sql);
+				con.execute(sql);
+			}
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -31,7 +32,7 @@ public class TipoExameModel {
 		
 		Statement con;
 		try {
-			String sql = "SELECT te.nm_tipo_exame"
+			String sql = "SELECT te.cd_tipo_exame, te.nm_tipo_exame "
 					+ "FROM tipo_exame te";
 			con = connection.createStatement();
 			ResultSet rs = con.executeQuery(sql);
@@ -47,8 +48,8 @@ public class TipoExameModel {
 		
 		Statement con;
 		try {
-			String sql = "SELECT te.nm_tipo_exame"
-					+ "FROM tipo_exame te"
+			String sql = "SELECT te.cd_tipo_exame, te.nm_tipo_exame "
+					+ "FROM tipo_exame te "
 					+ "WHERE te.cd_tipo_exame = " + cd_tipo_exame;
 			con = connection.createStatement();
 			ResultSet rs = con.executeQuery(sql);
@@ -65,7 +66,9 @@ public class TipoExameModel {
 		Statement con;
 		try {
 			con = connection.createStatement();
-			con.execute("DELETE FROM tipo_exame WHERE cd_tipo_exame = " + cd_tipo_exame);
+			String sql = "DELETE FROM tipo_exame WHERE cd_tipo_exame = " + cd_tipo_exame; 
+			System.out.println(sql);
+			con.execute(sql);
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -6,32 +6,55 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="assets/css/form.css">
+<link rel="stylesheet" type="text/css" href="assets/css/table.css"> 
 <title>FUNCIONÁRIO</title>
 <s:head/>
 </head>
-<style>
-body {
-	background-image: url('assets/img/rh.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-</style>
 <body>
 <div class="form-container">
-	<h1>CADASTRAR FUNCIONÁRIO </h1>
-	<s:form action="registerAction" class="form-init">
-		<s:textfield name="nome" label="Nome"></s:textfield>
-		<s:textfield name="sobrenome" label="Sobrenome"></s:textfield>
-		<s:select name="cargo" list="{'Gerente Contábil', 'Carpinteiro', 'Chefe de Execução de Obras', 'Agente de Portaria', 'Arquiteto Trainee' , 'Chefe de Serviços de Limpeza', 'Pintor', 'Assistente Comercial','Assistente de Diretoria', 'Pedreiro'}" label="Cargo"></s:select>
-		<s:select name="setor" list="{'Administrativo', 'Obras', 'Segurança', 'Projetos', 'Limpeza' , 'Manutenção', 'Comercial', 'Diretoria'}" label="Setor"></s:select>
-		<s:select name="sexo" list="{'Masculino', 'Feminino'}" label="Sexo"></s:select>
-		<s:textfield name="dataNascimento" type="date" format="dd-MM-yyyy" label="Data de Nascimento"></s:textfield>	
-		<s:textfield name="email" label="Email"></s:textfield>
-		<s:reset value="LIMPAR"></s:reset>
-		<s:submit value="CADASTRAR"></s:submit>
-	</s:form> <br>
-	<a href="controle" class="btn btn-primary"> VOLTAR</a>
+	<a href="cadastrar-funcionario" class="btn btn-primary"> CADASTRAR FUNCIONÁRIO</a>
+	<br><br><hr><br>
+	<table>
+		<thead>
+			<tr>
+				 <th>Nome</th>
+				 <th>Setor</th>
+				 <th>Cargo</th>
+				 <th>Sexo</th>
+				 <th>Nascimento</th>
+				 <th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<s:iterator value="funcionarios" var="funcionario">		
+				<tr style="margin-top:10px !important;">
+					<td><s:property value="#funcionario.nome"/> <s:property value="#funcionario.sobrenome"/></td>
+					<td><s:property value="#funcionario.setor"/></td>
+					<td><s:property value="#funcionario.cargo"/></td>
+					<td><s:property value="#funcionario.sexo"/></td>
+					<td><s:property value="#funcionario.dataNascimento"/></td>
+					<td>
+						<a class="remove-funcionario" title="remover" data-id='<s:property value="#funcionario.id"/>'> <img width="16" height="16" src="assets/img/trash.png"> </a>
+						<a href="editar-funcionario?id=<s:property value="#funcionario.id"/>" title="editar"> <img width="16" height="16" src="assets/img/edit.png"> </a>
+					</td>
+				</tr>
+			</s:iterator>
+		</tbody>
+	</table><br> <br>
+	<a href=controle class="btn btn-primary"> VOLTAR</a>
 	<br>
 </div>
 </body>
+<script src="assets/js/jquery.min.js"></script>
+<script>
+	$(function() {
+		$(document).on('click', '.remove-funcionario', function() {
+			var id = $(this).data('id');
+			$.post('remover-funcionario', {cd_funcionario: id}, function() {
+				window.location.reload(true);
+			});
+		});
+	});
+
+</script>
 </html>

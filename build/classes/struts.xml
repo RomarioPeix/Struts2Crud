@@ -14,7 +14,8 @@
 		<action name="controle" class="ControleAction">
 			<result name="success">/controle.jsp</result>
 		</action>
-		<action name="funcionario" class="ControleAction">
+		<!-- READ -->
+		<action name="funcionario" class="FuncionarioAction" >
 			<result name="success">/funcionario.jsp</result>
 		</action>
 		<action name="exame" class="ExameAction">
@@ -26,24 +27,68 @@
 		<action name="prestador" class="PrestadorAction">
 			<result name="success">/prestador.jsp</result>
 		</action>
+		<!-- OPEN CADASTRO -->
+		<action name="cadastrar-prestador" class="ControleAction">
+			<result name="success">/prestador-cadastrar.jsp</result>
+		</action>
+		<action name="cadastrar-funcionario" class="ControleAction">
+			<result name="success">/funcionario-cadastrar.jsp</result>
+		</action>
+		<action name="cadastrar-tipo" class="ControleAction">
+			<result name="success">/tipo-cadastrar.jsp</result>
+		</action>
+		<action name="cadastrar-exame" class="ExameAction" method="cadastrar">
+			<result name="success">/exame-cadastrar.jsp</result>
+		</action>
+		<!-- DELETE -->
+		<action name="remover-funcionario" class="FuncionarioAction" method="remover"></action>
+		<action name="remover-prestador" class="PrestadorAction" method="remover"></action>
+		<action name="remover-tipo" class="TipoAction" method="remover"></action>
+		<action name="remover-exame" class="ExameAction" method="remover"></action>
+		<!-- UPDATE -->
+		<action name="editar-funcionario" class="Update.UpdateFuncionarioAction">
+			<result name="success">/funcionario-cadastrar.jsp</result>			
+		</action>
+		<action name="editar-prestador" class="Update.UpdatePrestadorAction">
+			<result name="success">/prestador-cadastrar.jsp</result>			
+		</action>
+		<action name="editar-tipo" class="Update.UpdateTipoExameAction">
+			<result name="success">/tipo-cadastrar.jsp</result>			
+		</action>
+		<action name="editar-exame" class="Update.UpdateExameAction">
+			<result name="success">/exame-cadastrar.jsp</result>			
+		</action>
+		<!-- CREATE -->
 		<action name="registerAction" class="Register.RegisterFuncionarioAction">
-			<result name="success">/pos_register.jsp</result>
-			<result name="input">/funcionario.jsp</result>		
+			<result name="success" type="redirect">
+				<param name="location">funcionario</param>
+			</result>
+			<result name="input">/funcionario-cadastrar.jsp</result>		
 		</action>
 		<action name="registerTipoAction" class="Register.RegisterTipoAction">
-			<result name="success">/pos_register.jsp</result>
-			<result name="input">/tipo.jsp</result>
+			<result name="success" type="redirect">
+				<param name="location">tipo</param>
+			</result>
+			<result name="input">/tipo-cadastrar.jsp</result>
 		</action>
 		<action name="registerExameAction" class="Register.RegisterExameAction">
-			<result name="success">/pos_register.jsp</result>
-			<result name="input">/exame.jsp</result>
+			<result name="success" type="redirect">
+				<param name="location">exame</param>
+			</result>
+			<result name="input" type="redirect">
+				<param name="location">cadastrar-exame</param>
+			</result>
 		</action>
 		<action name="registerPrestadorAction" class="Register.RegisterPrestadorAction">
-			<result name="success">/pos_register.jsp</result>
-			<result name="input">/prestador.jsp</result>
+			<result name="success" type="redirect">
+				<param name="location">prestador</param>
+			</result>
+			<result name="input">/prestador-cadastrar.jsp</result>
 		</action>
 		<action name="registerAgendaAction" class="Register.RegisterExameAction">
-			<result name="success">/pos_register.jsp</result>
-		</action>	
+			<result name="success" type="redirect">
+				<param name="location">agenda</param>
+			</result>
+		</action>
 	</package>
 </struts>
