@@ -8,7 +8,7 @@ public class Database {
 
 	public static String status = "Não conectou...";
 	public Database() {
-		System.out.println("called");
+		System.out.println("called"); 
 	}
 	
 	public static java.sql.Connection getConexaoMySQL() {
