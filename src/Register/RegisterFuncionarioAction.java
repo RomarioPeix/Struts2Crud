@@ -1,4 +1,6 @@
 package Register;
+import java.awt.List;
+import Model.FuncionarioModel;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -9,11 +11,26 @@ public class RegisterFuncionarioAction extends ActionSupport implements Action {
 	String cargo;
 	String setor;
 	String sexo;
+	Integer sexoInt;
 	String dataNascimento;
 	String email;
 	
 	public String execute() throws Exception {
+		List funcionario = new List();
+		funcionario.add(nome);
+		funcionario.add(sobrenome);
+		funcionario.add(cargo);
+		funcionario.add(setor);
+		funcionario.add(sexo);
+		funcionario.add(dataNascimento);
+		funcionario.add(email);
+		FuncionarioModel.registerFuncionario(funcionario);
+		
 		return SUCCESS;
+	}
+	
+	public void setSexoInt(Integer sexoInt) {
+		this.sexoInt = sexoInt;
 	}
 
 	public String getNome() {
