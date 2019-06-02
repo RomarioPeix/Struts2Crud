@@ -67,7 +67,8 @@ public class PrestadorModel extends AppModel {
 		Statement con;
 		try {
 			con = connection.createStatement();
-			con.execute("DELETE FROM prestador WHERE cd_prestador = " + cd_prestador);
+			String sql = "DELETE FROM prestador WHERE cd_prestador = " + cd_prestador;
+			con.execute(sql);
 			return true;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

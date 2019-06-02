@@ -40,6 +40,14 @@ public class PrestadorAction implements Action {
 		this.prestadores = prestadores;
 	}
 
+	public Integer getCd_prestador() {
+		return cd_prestador;
+	}
+
+	public void setCd_prestador(Integer cd_prestador) {
+		this.cd_prestador = cd_prestador;
+	}
+	
 	public void remover() {
 		PrestadorModel.deletePrestador(this.cd_prestador);
 	}

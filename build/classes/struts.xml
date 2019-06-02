@@ -90,5 +90,21 @@
 				<param name="location">agenda</param>
 			</result>
 		</action>
+		<!-- AGENDA FUNCTIONS -->
+		<action name="salvar-agendamento" class="AgendaAction" method="novoAgendamento">
+			<result name="success" type="httpheader">200</result>
+		</action>
+		<action name="atualizar-agendamento" class="AgendaAction" method="novoAgendamento">
+			<result name="success" type="redirect">
+				<param name="location">agendamentos?cd_funcionario=${cd_funcionario}</param>
+			</result>
+		</action>	
+		<action name="agendamentos" class="AgendaAction">
+			<result name="success">/agendamentos.jsp</result>
+		</action>
+				<action name="editar-agendamento" class="Update.UpdateAgendaAction">
+			<result name="success">/agendamento-editar.jsp</result>			
+		</action>
+		<action name="remover-agendamento" class="AgendaAction" method="remover"></action>		
 	</package>
 </struts>
