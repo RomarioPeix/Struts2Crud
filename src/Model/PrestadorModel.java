@@ -63,7 +63,7 @@ public class PrestadorModel extends AppModel {
 	}
 	
 	public static boolean deletePrestador(Integer cd_prestador) {
-		
+		 
 		Statement con;
 		try {
 			con = connection.createStatement();
